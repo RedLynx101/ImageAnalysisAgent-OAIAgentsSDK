@@ -1,0 +1,20 @@
+{
+  "name": "@repo/pdf",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "pdfkit": "^0.14.0",
+    "@repo/shared": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.0",
+    "@types/pdfkit": "^0.13.3"
+  }
+}
+
