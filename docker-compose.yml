@@ -29,6 +29,7 @@ services:
       - ./reports:/app/reports
     environment:
       - NODE_ENV=development
+      - TRIGGER_ACCESS_TOKEN=${TRIGGER_ACCESS_TOKEN}
     env_file:
       - .env
     command: npm run dev:worker
