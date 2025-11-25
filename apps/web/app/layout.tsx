@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Image Analysis Agent",
-  description: "AI-powered image analysis and reporting",
+  title: "Image Analyst | AI-Powered Visual Intelligence",
+  description: "Analyze images with AI, generate comprehensive reports, and receive them via email.",
 };
 
 export default function RootLayout({
@@ -13,8 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
-

@@ -11,7 +11,8 @@ export const analyzeImage = async (imagePath: string) => {
     const base64Image = imageBuffer.toString('base64');
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "gpt-5-mini-2025-08-07",
+      max_tokens: 4096,
       messages: [
         {
           role: "user",
