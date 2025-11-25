@@ -10,3 +10,4 @@ reports/
 *.txt
 # temp files 
 .trigger/tmp/  
+**/.trigger/tmp/
