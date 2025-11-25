@@ -3,6 +3,8 @@ import nodemailer from 'nodemailer';
 import { env, logger, SendEmailPayload } from '@repo/shared';
 
 const createTransporter = async () => {
+  // --- OAuth2 Method (Commented out for now) ---
+  /*
   const oauth2Client = new google.auth.OAuth2(
     env.GMAIL_CLIENT_ID,
     env.GMAIL_CLIENT_SECRET,
@@ -33,6 +35,21 @@ const createTransporter = async () => {
       clientSecret: env.GMAIL_CLIENT_SECRET,
       refreshToken: env.GMAIL_REFRESH_TOKEN,
       accessToken
+    }
+  });
+  return transporter;
+  */
+
+  // --- App Password Method (Active) ---
+  if (!env.GMAIL_APP_PASSWORD) {
+    throw new Error("GMAIL_APP_PASSWORD is not set in environment variables.");
+  }
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: env.GMAIL_SENDER_EMAIL,
+      pass: env.GMAIL_APP_PASSWORD
     }
   });
 

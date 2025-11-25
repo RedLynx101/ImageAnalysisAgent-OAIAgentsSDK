@@ -8,9 +8,10 @@ dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 const envSchema = z.object({
   OPENAI_API_KEY: z.string().min(1),
   PERPLEXITY_API_KEY: z.string().min(1),
-  GMAIL_CLIENT_ID: z.string().min(1),
-  GMAIL_CLIENT_SECRET: z.string().min(1),
-  GMAIL_REFRESH_TOKEN: z.string().min(1),
+  GMAIL_CLIENT_ID: z.string().optional(),
+  GMAIL_CLIENT_SECRET: z.string().optional(),
+  GMAIL_REFRESH_TOKEN: z.string().optional(),
+  GMAIL_APP_PASSWORD: z.string().optional(),
   GMAIL_SENDER_EMAIL: z.string().email(),
   TRIGGER_SECRET_KEY: z.string().optional(), // Optional for build time
   TRIGGER_API_URL: z.string().url().default('https://api.trigger.dev'),

@@ -76,7 +76,7 @@ export async function runAgent(imagePath: string): Promise<ReportSpec> {
   const result = await run(agent, `Please generate a report for the image located at: ${imagePath}`);
   
   // Parse the output as JSON
-  const output = result.finalOutput; // Adjust based on actual SDK return type
+  const output = result.finalOutput || ""; // Adjust based on actual SDK return type
   
   try {
     // Find the JSON block

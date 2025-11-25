@@ -2,46 +2,68 @@
 
 A multi-service application that analyzes images using OpenAI Agents, performs web research, generates PDF reports, and emails them via Gmail.
 
-## Setup
+## Quick Start with Docker (Recommended)
+
+1.  **Prerequisites**: Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+2.  **Environment Variables**:
+    ```bash
+    cp .env.sample .env
+    ```
+    Fill in your API keys in `.env`
+
+3.  **Run**:
+    ```bash
+    docker-compose up
+    ```
+    
+    This starts both the web app (http://localhost:3000) and the Trigger.dev worker.
+
+4.  **Stop**:
+    ```bash
+    docker-compose down
+    ```
+
+## Manual Setup (Without Docker)
+
+Requires Node.js 20 or 22 (Node 21 is NOT supported).
 
 1.  **Install dependencies**:
     ```bash
     npm install
     ```
 
-2.  **Environment Variables**:
-    Copy `.env.sample` to `.env` and fill in the required keys.
+2.  **Run Locally** (two terminals):
     ```bash
-    cp .env.sample .env
+    # Terminal 1 - Web UI
+    npm run dev:web
+    
+    # Terminal 2 - Worker
+    npm run dev:worker
     ```
-    - **OpenAI**: API Key from platform.openai.com
-    - **Perplexity**: API Key for web research.
-    - **Gmail**: OAuth2 credentials (Client ID, Secret, Refresh Token).
-    - **Trigger.dev**: API keys for background jobs.
 
-3.  **Run Locally**:
+## Environment Variables
 
-    - Start the Web UI:
-      ```bash
-      npm run dev:web
-      ```
-    - Start the Worker (in a separate terminal):
-      ```bash
-      npm run dev:worker
-      ```
+Copy `.env.sample` to `.env` and configure:
+
+- **OPENAI_API_KEY**: From platform.openai.com
+- **PERPLEXITY_API_KEY**: For web research
+- **GMAIL_APP_PASSWORD**: App password from Google Account settings
+- **GMAIL_SENDER_EMAIL**: Your Gmail address
+- **TRIGGER_SECRET_KEY**: From trigger.dev dashboard
 
 ## Architecture
 
-- `apps/web`: Next.js frontend for uploads and status tracking.
-- `apps/worker`: Trigger.dev worker orchestrating the workflow.
-- `packages/agent`: OpenAI Agent definition (Vision + Web Search).
-- `packages/pdf`: PDF generation service.
-- `packages/email`: Gmail sending service.
+- `apps/web`: Next.js frontend (upload + status tracking)
+- `apps/worker`: Trigger.dev worker (AI workflow orchestration)
+- `packages/agent`: OpenAI Agent (Vision + Web Search)
+- `packages/pdf`: PDF generation service
+- `packages/email`: Gmail sending service
 
 ## Workflow
 
-1.  **Upload**: User uploads an image via the Web UI.
-2.  **Analysis**: The Agent analyzes the image and performs web research (Trigger.dev job `generate-report`).
-3.  **Review**: A PDF report is generated. The UI shows a "Review" status.
-4.  **Approval**: User clicks "Approve & Email" in the UI.
-5.  **Delivery**: The PDF is emailed to the recipient (Trigger.dev job `send-approved-email`).
+1.  **Upload**: User uploads an image
+2.  **Analysis**: Agent analyzes image + web research
+3.  **Review**: PDF generated, user reviews
+4.  **Approval**: User clicks "Approve & Email"
+5.  **Delivery**: PDF emailed to recipient

@@ -1,0 +1,37 @@
+services:
+  web:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./uploads:/app/uploads
+      - ./reports:/app/reports
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    command: npm run dev:web
+    depends_on:
+      - worker
+
+  worker:
+    build:
+      context: .
+      target: dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./uploads:/app/uploads
+      - ./reports:/app/reports
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    command: npm run dev:worker
+    tty: true
+    stdin_open: true
+

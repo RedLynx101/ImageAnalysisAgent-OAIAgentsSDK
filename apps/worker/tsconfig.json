@@ -2,8 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "baseUrl": ".",
+    "paths": {
+      "@repo/agent": ["../../packages/agent/src/index.ts"],
+      "@repo/pdf": ["../../packages/pdf/src/index.ts"],
+      "@repo/email": ["../../packages/email/src/index.ts"],
+      "@repo/shared": ["../../packages/shared/src/index.ts"]
+    }
   },
   "include": ["src/**/*", "trigger.config.ts"]
 }
-

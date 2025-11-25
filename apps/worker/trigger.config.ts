@@ -1,8 +1,9 @@
-import type { TriggerConfig } from "@trigger.dev/sdk/v3";
+import { defineConfig } from "@trigger.dev/sdk/v3";
 
-export const config: TriggerConfig = {
-  project: "image-analysis-agent", // This would normally be your project ID
-  logLevel: "log",
+export default defineConfig({
+  project: "proj_rpswdrmwsgukkcmrqugp",
+  dirs: ["./src/jobs"],
+  maxDuration: 300,
   retries: {
     enabledInDev: true,
     default: {
@@ -13,5 +14,5 @@ export const config: TriggerConfig = {
       randomize: true,
     },
   },
-};
+});
 
