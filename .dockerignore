@@ -11,4 +11,8 @@ build
 *.log
 .DS_Store
 .turbo
+.trigger
+**/.trigger
+**/tmp
+apps/worker/.trigger
 

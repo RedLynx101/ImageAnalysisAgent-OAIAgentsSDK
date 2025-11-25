@@ -32,7 +32,7 @@ services:
       - TRIGGER_ACCESS_TOKEN=${TRIGGER_ACCESS_TOKEN}
     env_file:
       - .env
-    command: npm run dev:worker
+    command: sh -c "cd apps/worker && npx --yes trigger.dev@3.3.0 dev --skip-update-check"
     tty: true
     stdin_open: true
 
