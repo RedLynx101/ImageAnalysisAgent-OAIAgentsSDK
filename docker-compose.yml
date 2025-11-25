@@ -30,6 +30,8 @@ services:
     environment:
       - NODE_ENV=development
       - TRIGGER_ACCESS_TOKEN=${TRIGGER_ACCESS_TOKEN}
+      - NODE_OPTIONS=--no-deprecation
+      - OPENAI_AGENTS_DISABLE_TRACING=1
     env_file:
       - .env
     command: sh -c "cd apps/worker && npx --yes trigger.dev@3.3.0 dev --skip-update-check"
