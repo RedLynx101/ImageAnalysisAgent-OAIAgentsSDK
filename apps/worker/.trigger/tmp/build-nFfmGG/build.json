@@ -1,0 +1,64 @@
+{
+  "contentHash": "e5517e90247256ffce7f3b077210434b",
+  "runtime": "node",
+  "cliPackageVersion": "3.3.0",
+  "packageVersion": "3.3.0",
+  "environment": "dev",
+  "target": "dev",
+  "files": [
+    {
+      "entry": "src/jobs/generateReport.ts",
+      "out": "/app/apps/worker/.trigger/tmp/build-daKLNf/app/apps/worker/src/jobs/generateReport.mjs"
+    },
+    {
+      "entry": "src/jobs/sendApprovedEmail.ts",
+      "out": "/app/apps/worker/.trigger/tmp/build-daKLNf/app/apps/worker/src/jobs/sendApprovedEmail.mjs"
+    }
+  ],
+  "sources": {
+    "src/jobs/generateReport.ts": {
+      "contents": "eJxtU02L2zAQvQfyHx5mYRPIOrR7S0lpIU3ppYQs9JxZe+wMsSUjyUmXkP9eJNlOst2brZn3MfMkqRttHM5wZA+4oDC6RvLNGSlLNmnOx7nND/Pjc/JlPJK+2bTqe8nKXQGGGz0nf3bXWLJiQ443q/W73iYv7jor7QVn+NkhtuwLG3qrNOXvsHZPhvMbeENu33X4T18Zj/hvqGVaWTcYibRYhnkn5/EIkHyBpK8/mdCQzHzFtGoBsm8qw6SJThYfG5xi+RWBDd0kqahCT3YvjowTVSLy9j5EKxTa4OHc8abaSCmKqt9U82U3DRN4tvkcn1JsW4Ww8f8lkm2rlFcI20/TNPHgDvpD2dYw6NXqqnXcLUobuD1HAKSAYs45n+G1dYi7xVFXoCxjayEKlc6oQs5HiAWTFTaDxC8FgmGq8OcZJ20OPsUTo5Zy7wI1nEbbhBy9bCEV+6OXZ2gDK7VUZNKBb63NVS8wkbVtzQEb/IvtrMlrxZjUWmm/3R4l9jDt6GL2cfUvDWdYgk4kbrjAfayp1FTyhty+X97diuNlL0SJ3XOezG4o75L6nA7XA5vV+gOmruzz2qzWt2lFr01erKViRTVjiV3UeXo4r8hxqvRpMr2kTV7s3oO89WG6m1c3uTqd3ZL3qh9Y9G+1n8LPeh74L3fDbtm1RoVYPCREY3WM2GjlWOXISKGR7ABxaJsINRHXvRbAOnKtXeDRtiHVx1lf6XSH/+ss8eQShrjMxqPO2T88A4bP",
+      "contentHash": "2436b9a5df09f0da8ea75e9bdde288e9"
+    },
+    "src/jobs/sendApprovedEmail.ts": {
+      "contents": "eJxlkM1qhDAQx++C7zAsBRVcPfTmsqWF9tBTC77ADma0YTUJybjbxfXdS/xA2p4GZn7/j0R2RluGARjdGUaore5g98xWNg3ZTNAld+KcXx53hzCQK+xIibcOZbspLBmdk9/9IlvtfVIoV8Un3lqN4o/QfaEl4ZVhQN+TttLK8ZT0YozVF1oSj1PVeAgDACkK2Hlkjwuznyuk/mp7VQC6m6ogNnNs8a9IAscnmMxgKZtJVev45EGpGlidYXIG1vAwLG6ZpUoaSYrhfodIUI19y9F4SqaHeEu8ouTtv9YeG2CJe6vWBgCOkXtXQORIcZSua5YdOcbOFKDoCq/IFCcZ6/fyo2QrVRMnMzoe/BzTMBjnkB85aJls",
+      "contentHash": "fcce356fc25eefe270c30a0b2e02f5b7"
+    },
+    "trigger.config.ts": {
+      "contents": "eJxlUMFqwzAMvQfyD8KnDUKTLTfv0rFeethttzGGGyvBTW1nspyWlfz7iBcyyi6SeE9P7yFjB08MV9DYGocv3rWmgwla8hbElsl0HdJG41gG3ZdjLZ7yLM/wkmQaWxVPfCO+u+YZwED+iA1LEPP0SUM4a7Ln0MW+byx9xW4QxbyoDQUJ72JTBmrKoz8E8ZEIqy67SIqNdxLqqkogIZPBICGZAKBThxPqvdvhKIEpYvFLLMnWxXTvmRntwEFCXaywcW/Goo+8d69BwkO1WC2af+Qf26qGPUl4XBFSTntrvvEmy5T6XKf79L0f5yxtfQ==",
+      "contentHash": "8759a15c6a4a86d45a4f49b2569f2175"
+    },
+    "tsconfig.json": {
+      "contents": "eJyF0bFqAzEMBuA9kHcQGo/D3jNl6N6pU+ng2jpH7cU2lgKBcO9efA6hhINMBv3/J4x92+8AkK5KKQgeAI2xxlgVn9PE0fxITjiuJZ/PhWeq70U5p1a+tTkA5ou+cW06sGivA+C3E/qo87r1MSxOT/8sAB4rlWxdpKR4gM/7DYrzvy6S9MBK9ZZToKtRwa/xCZcwbdESpheQzo7nLboGL7CcXKWwpXvyxLte2rH0F+Xk50ugdUPrDoMdcATUyjFSNfc/6HjZ7/4AZfh57A==",
+      "contentHash": "67086b07e65270ed8bb5cf1a9c4e319a"
+    },
+    "package.json": {
+      "contents": "eJx9kcFOwzAQRO/+ipWPiG7cGC49ceA7Kpl4CVZT21q7hlD135FdFYKIuL6Z2RlpzwJAenMkuQP5HvhALO8rK8TJBV+xQoXbK43sisnVnPlEDaWBXcxJ7uAsAADky8lNtuZyGloKQFoqlfj4AZvNTAkyu3EkRksFqvjti1OY/7M2XQBcWrmlSN6SHxwtFjwxxdCZkXyup+5u16+cjsZNKzza1xWa3gyT/S0sFnXJHqqoUaO6GT5DC+w19j0+LNeW5/XBeY6UOh9s+8O+V7hVP/cWfX+6WrK9oCUfUaNujeIivgAwM39n",
+      "contentHash": "af0e34ae123f3e06190ca93784a2614f"
+    }
+  },
+  "externals": [
+    {
+      "name": "import-in-the-middle",
+      "version": "1.11.0"
+    }
+  ],
+  "config": {
+    "project": "proj_rpswdrmwsgukkcmrqugp",
+    "dirs": [
+      "./src/jobs"
+    ]
+  },
+  "outputPath": "/app/apps/worker/.trigger/tmp/build-daKLNf",
+  "runWorkerEntryPoint": "/app/apps/worker/.trigger/tmp/build-daKLNf/root/.npm/_npx/7372b51fc06f79a7/node_modules/trigger.dev/dist/esm/entryPoints/dev-run-worker.mjs",
+  "indexWorkerEntryPoint": "/app/apps/worker/.trigger/tmp/build-daKLNf/root/.npm/_npx/7372b51fc06f79a7/node_modules/trigger.dev/dist/esm/entryPoints/dev-index-worker.mjs",
+  "configPath": "/app/apps/worker/.trigger/tmp/build-daKLNf/app/apps/worker/trigger.config.mjs",
+  "customConditions": [],
+  "deploy": {
+    "env": {}
+  },
+  "build": {},
+  "otelImportHook": {
+    "include": []
+  }
+}

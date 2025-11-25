@@ -1,8 +1,13 @@
-import { Agent, run, tool } from '@openai/agents';
+import { Agent, run, tool, setTracingDisabled } from '@openai/agents';
 import { z } from 'zod';
 import { analyzeImage } from './tools/analyzeImage';
 import { webSearch } from './tools/webSearch';
 import { ReportSpec } from '@repo/shared';
+
+// Disable tracing to avoid "No existing trace found" errors
+// This is needed because the tracing system requires OpenAI API tracing support
+// which may not be available in all environments
+setTracingDisabled(true);
 
 // Define tools using the SDK's tool() helper
 const analyzeImageTool = tool({
@@ -54,7 +59,6 @@ Only output the JSON object, no other text.`,
 });
 
 export async function runAgent(imagePath: string): Promise<ReportSpec> {
-  // Tracing is disabled via OPENAI_AGENTS_DISABLE_TRACING=1 env var
   const result = await run(agent, `Please generate a report for the image located at: ${imagePath}`);
   
   // Parse the output as JSON

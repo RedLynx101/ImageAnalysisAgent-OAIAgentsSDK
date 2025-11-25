@@ -8,3 +8,5 @@ uploads/
 reports/
 .DS_Store
 *.txt
+# temp files 
+.trigger/tmp/  

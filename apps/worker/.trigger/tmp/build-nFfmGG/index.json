@@ -1,0 +1,36 @@
+{
+  "configPath": "/app/apps/worker/.trigger/tmp/build-daKLNf/app/apps/worker/trigger.config.mjs",
+  "tasks": [
+    {
+      "id": "generate-report",
+      "retry": {
+        "maxAttempts": 3,
+        "factor": 2,
+        "minTimeoutInMs": 1000,
+        "maxTimeoutInMs": 10000,
+        "randomize": true
+      },
+      "maxDuration": 300,
+      "filePath": "src/jobs/generateReport.ts",
+      "exportName": "generateReport",
+      "entryPoint": "/app/apps/worker/.trigger/tmp/build-daKLNf/app/apps/worker/src/jobs/generateReport.mjs"
+    },
+    {
+      "id": "send-approved-email",
+      "retry": {
+        "maxAttempts": 3,
+        "factor": 2,
+        "minTimeoutInMs": 1000,
+        "maxTimeoutInMs": 10000,
+        "randomize": true
+      },
+      "maxDuration": 300,
+      "filePath": "src/jobs/sendApprovedEmail.ts",
+      "exportName": "sendApprovedEmail",
+      "entryPoint": "/app/apps/worker/.trigger/tmp/build-daKLNf/app/apps/worker/src/jobs/sendApprovedEmail.mjs"
+    }
+  ],
+  "workerEntryPoint": "/app/apps/worker/.trigger/tmp/build-daKLNf/root/.npm/_npx/7372b51fc06f79a7/node_modules/trigger.dev/dist/esm/entryPoints/dev-run-worker.mjs",
+  "runtime": "node",
+  "customConditions": []
+}
